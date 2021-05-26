@@ -38,20 +38,3 @@ spec:
       protocol: TCP
   selector:
     app: nginx
-
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: nginx-ing
-  labels:
-    app: nginx
-spec:
-  rules:
-   - http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          serviceName: nginx-svc
-          servicePort: 80
